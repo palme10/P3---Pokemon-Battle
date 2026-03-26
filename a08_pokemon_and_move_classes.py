@@ -1,24 +1,28 @@
-#Team Members: Elijah Palmer, [Name 2], [Name 3], [Name 4]
+#Team Members: Elijah Palmer, Maddox Swift, [Name 3], [Name 4]
 
 import random
 
 # ============================================================
-# PERSON 1: Create the Move class
+# Maddox: Create the Move class
 # ============================================================
 
 class Move:
     def __init__(self, move_name, elemental_type, low_attack_points, high_attack_points):
-        # TODO: Initialize instance variables
-        pass
+        
+        #Initialize instance variables
+        self.move_name = move_name
+        self.elemental_type = elemental_type
+        self.low_attack_points = low_attack_points
+        self.high_attack_points = high_attack_points
 
     def get_info(self):
-        # TODO: Return formatted string:
+        # Return formatted string:
         # "<move name> (Type: <elemental type>): <low> to <high> Attack Points"
-        pass
+        return f'{self.move_name} (Type: {self.elemental_type}): {self.low_attack_points} to {self.high_attack_points}'
 
     def generate_attack_value(self):
         # TODO: Return a random int between low_attack_points and high_attack_points (inclusive)
-        pass
+        return random.randint(self.low_attack_points, self.high_attack_points)
 
 
 # ============================================================
