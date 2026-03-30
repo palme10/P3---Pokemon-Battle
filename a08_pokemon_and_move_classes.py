@@ -47,41 +47,39 @@ class Pokemon:
 
 
 # ============================================================
-# PERSON 3: Create Move objects, list, and loop (Part 1 logic)
+# ADAM: Create Move objects, list, and loop (Part 1 logic)
 # ============================================================
 
 # TODO: Create 9 Move objects using the table below:
-# Name          | Type   | Low | High
-# Tackle        | Normal | 5   | 20
-# Quick Attack  | Normal | 6   | 25
-# Slash         | Normal | 10  | 30
-# Flamethrower  | Fire   | 5   | 30
-# Ember         | Fire   | 10  | 20
-# Water Gun     | Water  | 5   | 15
-# Hydro Pump    | Water  | 20  | 25
-# Vine Whip     | Grass  | 10  | 25
-# Solar Beam    | Grass  | 18  | 27
 
-tackle = None         # Replace None with Move(...)
-quick_attack = None
-slash = None
-flamethrower = None
-ember = None
-water_gun = None
-hydro_pump = None
-vine_whip = None
-solar_beam = None
+tackle = Move("Tackle","Normal",5,20)       
+quick_attack = Move("Quick attack","Normal",6,25)
+slash = Move("Slash","Normal",10,30)
+flamethrower = Move("Flamethrower","Fire",5,30)
+ember = Move("Ember","Fire",10,20)
+water_gun = Move("Water Gun","Water",5,15)
+hydro_pump = Move("Hydro Pump","Water",20,25)
+vine_whip = Move("Vine Whip","Grass",10,15)
+solar_beam = Move("Solar Beam","Grass",18,27)
 
 # TODO: Put all 9 Move objects into a list
-moves_list = []
+moves_list = [tackle,quick_attack,slash,flamethrower,ember,water_gun,hydro_pump,vine_whip,solar_beam]
 
 # TODO: Loop 3 times:
-#   - Randomly select a move from moves_list
-#   - Print the result of get_info() on the selected move
-#   - Print "Generated attack value: " + the result of generate_attack_value()
-#   - Delete the selected move from the list (so it can't be picked again)
+
 for i in range(3):
-    pass
+    
+    #   - Randomly select a move from moves_list
+    move = random.choice(moves_list)
+    
+    #   - Print the result of get_info() on the selected move
+    print(move.get_info())
+    
+    #   - Print "Generated attack value: " + the result of generate_attack_value()
+    print(f'Generated attack value: {move.generate_attack_value()}')
+    
+    #   - Delete the selected move from the list (so it can't be picked again)
+    moves_list.remove(move)
 
 input("Press enter to continue...")
 
