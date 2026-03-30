@@ -1,4 +1,4 @@
-#Team Members: Elijah Palmer, Maddox Swift, [Name 3], [Name 4]
+#Team Members: Elijah Palmer, Maddox Swift, Zachary Worthington, [Name 4]
 
 import random
 
@@ -26,24 +26,24 @@ class Move:
 
 
 # ============================================================
-# PERSON 2: Create the Pokemon class
+# Zachary Worthington: Create the Pokemon class
 # ============================================================
 
 class Pokemon:
     def __init__(self, name, elemental_type, hit_points):
-        # TODO: Initialize instance variables
-        pass
+        # Initialize instance variables
+        self.name = name
+        self.elemental_type = elemental_type
+        self.hit_points = hit_points
 
     def get_info(self):
-        # TODO: Return formatted string:
-        # "<name> - Type: <elemental_type> - Hit Points: <hit_points>"
-        pass
+        # Return formatted string
+        return f"{self.name} - Type: {self.elemental_type} - Hit Points: {self.hit_points}"
 
     def heal(self):
-        # TODO: Add 15 to hit_points, then print:
-        # "<name> has been healed to <hit_points> hit points."
-        # Do NOT return anything
-        pass
+        # Add 15 to hit_points and print updated message
+        self.hit_points += 15
+        print(f"{self.name} has been healed to {self.hit_points} hit points.")
 
 
 # ============================================================
@@ -92,9 +92,10 @@ input("Press enter to continue...")
 
 # TODO: Create 3 Pokemon objects:
 # Name       | Type  | Hit Points
-# Bulbasaur  | Grass | 60
-# Charmander | Fire  | 55
-# Squirtle   | Water | 65
+bulbasaur = Pokemon("Bulbasaur", "Grass", 60)
+charmander = Pokemon("Charmander", "Fire", 55)
+squirtle = Pokemon("Squirtle", "Water", 65)
+
 
 bulbasaur = None      # Replace None with Pokemon(...)
 charmander = None
