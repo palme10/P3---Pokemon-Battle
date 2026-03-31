@@ -18,7 +18,7 @@ class Move:
     def get_info(self):
         # Return formatted string:
         # "<move name> (Type: <elemental type>): <low> to <high> Attack Points"
-        return f'{self.move_name} (Type: {self.elemental_type}): {self.low_attack_points} to {self.high_attack_points}'
+        return f'{self.move_name} (Type: {self.elemental_type}): {self.low_attack_points} to {self.high_attack_points} Attack Points'
 
     def generate_attack_value(self):
         # TODO: Return a random int between low_attack_points and high_attack_points (inclusive)
@@ -31,19 +31,16 @@ class Move:
 
 class Pokemon:
     def __init__(self, name, elemental_type, hit_points):
-        # TODO: Initialize instance variables
-        pass
+        self.name = name
+        self.elemental_type = elemental_type
+        self.hit_points = hit_points
 
     def get_info(self):
-        # TODO: Return formatted string:
-        # "<name> - Type: <elemental_type> - Hit Points: <hit_points>"
-        pass
+        return f'{self.name} - Type: {self.elemental_type} - Hit Points: {self.hit_points}'
 
     def heal(self):
-        # TODO: Add 15 to hit_points, then print:
-        # "<name> has been healed to <hit_points> hit points."
-        # Do NOT return anything
-        pass
+        self.hit_points += 15
+        print(f'{self.name} has been healed to {self.hit_points} hit points.')
 
 
 # ============================================================
@@ -53,13 +50,13 @@ class Pokemon:
 # TODO: Create 9 Move objects using the table below:
 
 tackle = Move("Tackle","Normal",5,20)       
-quick_attack = Move("Quick attack","Normal",6,25)
+quick_attack = Move("Quick Attack","Normal",6,25)
 slash = Move("Slash","Normal",10,30)
 flamethrower = Move("Flamethrower","Fire",5,30)
 ember = Move("Ember","Fire",10,20)
 water_gun = Move("Water Gun","Water",5,15)
 hydro_pump = Move("Hydro Pump","Water",20,25)
-vine_whip = Move("Vine Whip","Grass",10,15)
+vine_whip = Move("Vine Whip","Grass",10,25)
 solar_beam = Move("Solar Beam","Grass",18,27)
 
 # TODO: Put all 9 Move objects into a list
@@ -89,20 +86,15 @@ input("Press enter to continue...")
 # ============================================================
 
 # TODO: Create 3 Pokemon objects:
-# Name       | Type  | Hit Points
-# Bulbasaur  | Grass | 60
-# Charmander | Fire  | 55
-# Squirtle   | Water | 65
+bulbasaur = Pokemon("Bulbasaur", "Grass", 60)
+charmander = Pokemon("Charmander", "Fire", 55)
+squirtle = Pokemon("Squirtle", "Water", 65)
 
-bulbasaur = None      # Replace None with Pokemon(...)
-charmander = None
-squirtle = None
+print(charmander.get_info())
+charmander.heal()
+print(charmander.get_info())
 
-# TODO: Print get_info() for Charmander
-# TODO: Call heal() on Charmander
-# TODO: Print get_info() for Charmander again (hit points should be higher)
+pokemon_list = [bulbasaur, charmander, squirtle]
 
-# TODO: Put the 3 Pokemon objects in a list
-pokemon_list = []
-
-# TODO: Loop through pokemon_list and print get_info() for each one
+for pokemon in pokemon_list:
+    print(pokemon.get_info())
