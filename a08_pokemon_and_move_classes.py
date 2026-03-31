@@ -1,4 +1,4 @@
-#Team Members: Elijah Palmer, Maddox Swift, [Name 3], [Name 4]
+#Team Members: Elijah Palmer, Maddox Swift, Adam Cammack , Zachary Worthington
 
 import random
 
